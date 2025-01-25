@@ -6,7 +6,7 @@
                 <div class="row footer-widget-wrapper pt-100 pb-70">
                     <div class="col-md-4">
                         <div class="footer-widget-box about-us">
-                             <a class="navbar-brand" href="{{ route('web.home') }}">
+                             <a class="footer-logo" href="{{ route('web.home') }}">
 
                         <img src="{{ asset(get_app_setting('logo')) }}" alt="logo">
 
