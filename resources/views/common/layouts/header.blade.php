@@ -4,7 +4,9 @@
                 <div class="container">
                     <a class="navbar-brand" href="{{ route('web.home') }}">
 
+
                         <img src="{{ asset(get_app_setting('logo')) }}" alt="logo">
+
 
                     </a>
                     <div class="mobile-menu-right">

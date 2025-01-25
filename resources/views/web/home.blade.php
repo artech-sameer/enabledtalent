@@ -4,7 +4,9 @@
 
 
 @section('main')
-       <!-- hero area -->
+       
+
+        <!-- hero area -->
         <div class="hero-section">
             <div class="hero-single">
                 <div class="container">
@@ -13,7 +15,7 @@
                             <div class="hero-content text-center">
                                 <h6 class="hero-sub-title">We Have 250,000+ Live Jobs</h6>
                                 <h1 class="hero-title">
-                                    Find The Job Easiest Way That Fits Your Life And Enjoy
+                                    The #1 <span class="hero-span">Job Board for</span> Hiring or Find your next job
                                 </h1>
                                 <p>
                                     There are many variations of passages orem psum available but the majority have
@@ -21,67 +23,26 @@
                                 </p>
                                 <div class="search-form">
                                     <div class="search-form-wrapper">
-                                        <form action="#">
                                             <div class="row">
                                                 <div class="col-md-4 px-0">
                                                     <div class="form-group">
-                                                        <div class="form-group-icon">
-                                                            <input type="text" class="form-control"
-                                                                placeholder="Type Keyword...">
-                                                            <i class="fe-search"></i>
-                                                        </div>
+                                                        <h4>Task Completed</h4>
+                                                        <span>3 Million+</span>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3 px-0">
+                                                <div class="col-md-4 px-0">
                                                     <div class="form-group">
-                                                        <div class="form-group-icon">
-                                                            <select class="select">
-                                                                <option value="">Location</option>
-                                                                <option value="1">Brazil</option>
-                                                                <option value="2">Canada</option>
-                                                                <option value="3">Germany</option>
-                                                                <option value="4">Italy</option>
-                                                                <option value="5">Japan</option>
-                                                                <option value="6">USA</option>
-                                                                <option value="7">UK</option>
-                                                            </select>
-                                                            <i class="fe-map-pin"></i>
-                                                        </div>
+                                                        <h4>Assistants Assessed</h4>
+                                                        <span>100+</span>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3 px-0">
+                                                <div class="col-md-4 px-0">
                                                     <div class="form-group">
-                                                        <div class="form-group-icon">
-                                                            <select class="select">
-                                                                <option value="">Category</option>
-                                                                <option value="1">Web Designer</option>
-                                                                <option value="2">Developer</option>
-                                                                <option value="3">Software</option>
-                                                                <option value="4">Finance</option>
-                                                                <option value="5">Management</option>
-                                                                <option value="6">Advertising</option>
-                                                                <option value="7">Accountant</option>
-                                                            </select>
-                                                            <i class="fe-briefcase"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-2 px-1">
-                                                    <div class="form-group">
-                                                        <button type="submit" class="theme-btn w-100"><span
-                                                                class="fe-search"></span>Search</button>
+                                                        <h4>Assistants Assessed</h4>
+                                                        <span>100+</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </form>
-                                    </div>
-                                    <div class="popular-search">
-                                        <span>Popular Search: </span>
-                                        <a href="#">Web</a>
-                                        <a href="#">App</a>
-                                        <a href="#">Software</a>
-                                        <a href="#">Designer</a>
-                                        <a href="#">Development</a>
                                     </div>
                                 </div>
                             </div>
@@ -847,7 +808,7 @@
                                 <p>
                                     There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
                                 </p>
-                                <a href="#" class="theme-btn">Read More mmm</a>
+                                <a href="#" class="theme-btn">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -855,5 +816,8 @@
             </div>
         </div>
         <!-- blog-area end -->
+
+
+
     
 @endsection
