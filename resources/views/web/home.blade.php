@@ -858,8 +858,5 @@
         </div>
         <!-- blog-area end -->
 
-
-
->>>>>>> mamoon
     
 @endsection
