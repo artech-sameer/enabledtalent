@@ -14,14 +14,9 @@
                     <div class="collapse navbar-collapse" id="main_nav">
                         <ul class="navbar-nav">
                            <li class="nav-item"><a class="nav-link" href="{{ route('web.home') }}">Home</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Blog</a>
-                                <ul class="dropdown-menu fade-down">
-                                    <li><a class="dropdown-item" href="blog.html">Blog</a></li>
-                                    <li><a class="dropdown-item" href="blog-single.html">Blog Single</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                           <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                           <li class="nav-item"><a class="nav-link" href="#">Job Seekeers</a></li>
+                           <li class="nav-item"><a class="nav-link" href="#">Employers</a></li>
                         </ul>
                         <div class="header-nav-right">
                             <div class="header-btn">

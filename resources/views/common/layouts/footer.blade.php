@@ -1,12 +1,13 @@
-<!-- footer area -->
+
+
     <footer class="footer-area">
         <div class="footer-widget">
             <div class="container">
                 <div class="row footer-widget-wrapper pt-100 pb-70">
-                    <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="col-md-4">
                         <div class="footer-widget-box about-us">
                             <a href="#" class="footer-logo">
-                                <img src="{{ asset(get_app_setting('logo')) }}" alt="">
+                                <img src="assets/img/logo/logo.png" alt="">
                             </a>
                             <p class="mb-4">
                                 We are many variations of passages available but the majority have suffered alteration
@@ -20,46 +21,18 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl-2">
-                        <div class="footer-widget-box list">
-                            <h4 class="footer-widget-title">Company</h4>
-                            <ul class="footer-list">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Pricing Plan</a></li>
-                                <li><a href="#">Site Map</a></li>
-                                <li><a href="#">Security Center</a></li>
-                                <li><a href="#">Our Team</a></li>
-                                <li><a href="#">Latest Blog</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-2">
+                    <div class="col-md-4">
                         <div class="footer-widget-box list">
                             <h4 class="footer-widget-title">Quick Links</h4>
                             <ul class="footer-list">
-                                <li><a href="#">Find Jobs</a></li>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Job Seekeers</a></li>
                                 <li><a href="#">Employers</a></li>
-                                <li><a href="#">Candidates</a></li>
-                                <li><a href="#">Post Job</a></li>
-                                <li><a href="#">Sign In</a></li>
-                                <li><a href="#">Sign Up</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl-2">
-                        <div class="footer-widget-box list">
-                            <h4 class="footer-widget-title">Support</h4>
-                            <ul class="footer-list">
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Faq's</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms Of Service</a></li>
-                                <li><a href="#">Need Help</a></li>
-                                <li><a href="#">Live Chat</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="col-md-4">
                         <div class="footer-widget-box list">
                             <h4 class="footer-widget-title">Newsletter</h4>
                             <div class="footer-newsletter">
@@ -77,13 +50,6 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="footer-download">
-                                <h5>Download</h5>
-                                <div class="footer-download-content">
-                                    <a href="#"><img src="assets/img/download/google-play.png" alt=""></a>
-                                    <a href="#"><img src="assets/img/download/app-store.png" alt=""></a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -94,16 +60,13 @@
                 <div class="row">
                     <div class="col-md-6 align-self-center">
                         <p class="copyright-text">
-                            &copy; Copyright <span id="date"></span> <a href="#"> Jobox </a> All Rights Reserved.
+                            {{get_app_setting('created_at')->format('Y')}} © {{get_app_setting('title')}}.
                         </p>
                     </div>
                     <div class="col-md-6 align-self-center">
-                        <ul class="footer-social">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                        </ul>
+                        <div class="text-sm-end d-none d-sm-block">
+                            Design & Develop by <a href="https://artechnology.in">AR Technology</a>
+                        </div>
                     </div>
                 </div>
             </div>
