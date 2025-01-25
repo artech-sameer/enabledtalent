@@ -860,9 +860,6 @@
             </div>
         </div>
         <!-- blog-area end -->
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
     
 @endsection
