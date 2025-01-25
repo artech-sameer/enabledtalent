@@ -186,9 +186,6 @@
             var button = new Button(element);
             button.process();
             clearErrors();
-            grecaptcha.ready(function() {
-                grecaptcha.execute("{{ env('GOOGLE_RECAPTCHA_KEY') }}", {action: 'login'}).then(function(token) {
-                    $('#loginform .recaptcha').html('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
                     var formData = new FormData(document.querySelector('#loginform'));
                     $.ajax({
                         type: "POST",
@@ -218,8 +215,8 @@
                             handleErrors(error.responseJSON);
                         }
                     });
-                });
-            });
+                
+            
         });
     </script>
 </body>
