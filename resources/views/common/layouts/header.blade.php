@@ -4,7 +4,11 @@
                 <div class="container">
                     <a class="navbar-brand" href="{{ route('web.home') }}">
 
+<<<<<<< HEAD
                         <img src="{{asset(get_app_setting('logo')??'')}}" alt="logo">
+=======
+                        <img src="{{ asset(get_app_setting('logo')) }}" alt="logo">
+>>>>>>> origin/master
 
                     </a>
                     <div class="mobile-menu-right">

@@ -92,7 +92,10 @@
         </div>
         <!-- hero area end -->
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/master
 
 
 
@@ -857,6 +860,9 @@
             </div>
         </div>
         <!-- blog-area end -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     
 @endsection

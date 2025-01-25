@@ -6,9 +6,11 @@
                 <div class="row footer-widget-wrapper pt-100 pb-70">
                     <div class="col-md-4">
                         <div class="footer-widget-box about-us">
-                            <a href="#" class="footer-logo">
-                                <img src="assets/img/logo/logo.png" alt="">
-                            </a>
+                             <a class="navbar-brand" href="{{ route('web.home') }}">
+
+                        <img src="{{ asset(get_app_setting('logo')) }}" alt="logo">
+
+                    </a>
                             <p class="mb-4">
                                 We are many variations of passages available but the majority have suffered alteration
                                 in some form by injected.
