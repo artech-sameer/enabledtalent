@@ -228,6 +228,18 @@
 
 @push('scripts')
     <script src="{{ asset('admin-assets/libs/select2/js/select2.min.js') }}" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            $(".js-choice").each(function() {
+                new Choices($(this)[0], {
+                    allowHTML: true,
+                }); 
+            });
+        });
+    </script>
+
 
     <script type="text/javascript">
         $(document).ready(function() {

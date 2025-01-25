@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AppSettingController;
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\BreadController;
+use App\Http\Controllers\Admin\BusinessCategoryController;
 use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\CommonController;
 use App\Http\Controllers\Admin\CompanyController;
@@ -226,6 +227,17 @@ Route::middleware('admin.auth')->group(function() {
         Route::post('all-companies', 'store')->name('all-companies.store')->middleware('can:add_all_companies');
         Route::put('all-companies/{id}', 'update')->name('all-companies.update')->middleware('can:edit_all_companies');
         Route::delete('all-companies/{id}/delete', 'destroy')->name('all-companies.destroy')->middleware('can:delete_all_companies');
+    });
+
+    //BusinessCategory
+    Route::controller(BusinessCategoryController::class)->group(function(){
+        Route::match(['get','patch'],'business-categories', 'index')->name('business-categories.index')->middleware('can:browse_business_categories');
+        Route::get('business-categories/create', 'create')->name('business-categories.create')->middleware('can:add_business_categories');
+        Route::get('business-categories/{id}', 'show')->name('business-categories.show')->middleware('can:read_business_categories');
+        Route::get('business-categories/{id}/edit', 'edit')->name('business-categories.edit')->middleware('can:edit_business_categories');
+        Route::post('business-categories', 'store')->name('business-categories.store')->middleware('can:add_business_categories');
+        Route::put('business-categories/{id}', 'update')->name('business-categories.update')->middleware('can:edit_business_categories');
+        Route::delete('business-categories/{id}/delete', 'destroy')->name('business-categories.destroy')->middleware('can:delete_business_categories');
     });
 
 

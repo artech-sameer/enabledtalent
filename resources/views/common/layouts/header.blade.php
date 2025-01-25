@@ -3,7 +3,7 @@
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
                     <a class="navbar-brand" href="{{ route('web.home') }}">
-                        <img src="{{ asset('assets/img/logo/logo.png') }}" alt="logo">
+                        <img src="{{ asset(get_app_setting('logo')) }}" alt="logo">
                     </a>
                     <div class="mobile-menu-right">
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
