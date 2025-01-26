@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/nice-select.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-
+    @stack('links')
 </head>
 
 <body class="home-3">
@@ -68,7 +68,7 @@
     <script src="{{asset('assets/js/nice-select.min.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
 
-
+    @stack('scripts')
     <script src="{{asset('assets/js/custom.js')}}"></script>
     <script src="{{asset('assets/js/crudAjax.js')}}"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
@@ -85,6 +85,6 @@
         }).showToast();
       </script>
     @endif
-    @stack('scripts')
+    @include('common.layouts.script')
   </body>
 </html>

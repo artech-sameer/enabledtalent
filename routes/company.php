@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\Company\Auth\CompanyLoginController;
 use App\Http\Controllers\Company\Auth\CompanyRegisterController;
+use App\Http\Controllers\Company\CompanyController;
 use App\Http\Controllers\Company\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -43,6 +44,12 @@ Route::middleware('company.auth')->group(function() {
 
     Route::controller(DashboardController::class)->name('dashboard.')->group(function(){
         Route::get('dashboard', 'index')->name('index');
+    });
+
+    Route::controller(CompanyController::class)->name('details.')->group(function(){
+        Route::get('details', 'detail')->name('detail');
+        Route::post('detail/store', 'detailStore')->name('detail.store');
+        Route::post('detail/contact', 'contactStore')->name('contact.store');
     });
 });
 

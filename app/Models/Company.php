@@ -26,6 +26,11 @@ class Company extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function details(){
+        return $this->hasOne(CompanyDetail::class);
+    }
+    
+
 
     public function sendPasswordResetNotification($token)
     {

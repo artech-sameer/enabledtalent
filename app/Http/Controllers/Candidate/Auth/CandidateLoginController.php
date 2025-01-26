@@ -31,8 +31,10 @@ class CandidateLoginController extends Controller
 
 
 
-    public function loginForm()
-    {
+    public function loginForm(){
+        if(auth('company')->user()){
+            return redirect()->route('company.dashboard.index');
+        }
         return view('candidate.auth.login');
     }
 

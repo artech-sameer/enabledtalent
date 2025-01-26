@@ -325,6 +325,23 @@ Version         : 1.2
 
 
 
+$(document).ready(function(){
+    var top_bar = $(".top-bar").innerHeight();
+    var header = $(".header").innerHeight();
+    var window_height = $(window).height();
+    var total_height = window_height - header;
+    $('.hero-single').css('height', total_height + 'px');
+    $('.main').css('padding-top', header + 'px');
+});
+
+$(window).resize(function (event) {
+    var top_bar = $(".top-bar").innerHeight();
+    var header = $(".header").innerHeight();
+    var window_height = $(window).height();
+    var total_height = window_height - header;
+    $('.hero-single').css('height', total_height + 'px');
+    $('.main').css('padding-top', header + 'px');
+});
 
 
 

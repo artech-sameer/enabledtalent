@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('business_categories', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->unique();
+            $table->text('description')->nullable();
+            $table->integer('status_id')->default(14);
             $table->timestamps();
         });
     }

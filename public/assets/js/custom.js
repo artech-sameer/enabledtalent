@@ -143,9 +143,9 @@ if (addressTextarea) {
 }
 
 // Check if the element with ID 'mobile_no' exists
-var phoneInput = document.getElementById('mobile_no');
+var phoneInput = document.getElementById('mobile_no_valid');
 if (phoneInput) {
-    var prefilledNumber = "+91";
+    var prefilledNumber = "+1";
 
     function resetInput() {
         phoneInput.value = '';

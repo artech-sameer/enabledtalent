@@ -4,7 +4,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/css/select2.min.css" rel="stylesheet" />
     <!-- Select2 JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/js/select2.min.js"></script>
-
+    <style>
+        .choices {
+            margin-bottom: 0 !important;
+        }
+    </style>
     @endpush
 
 
@@ -30,27 +34,51 @@
         <div class="col-lg-8">
             <div class="card">
                 <div class="card-body">
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-xxl-4 col-sm-12">
-                                <div class="search-box">
-                                    <input type="search" class="form-control search bg-light border-light" id="searchJob" autocomplete="off" placeholder="Search for jobs or companies...">
-                                    <i class="ri-search-line search-icon"></i>
+
+                    <form class="m-0">
+                        <div class="d-flex gap-3 justify-content-between">
+                            <div class="w-100">
+                                <div class="m-0 form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                    {{ html()->label('Name', 'name') }}
+                                    <div class="search-box">
+                                        {{ html()->search('name')->class('searchFilter form-control search')->placeholder('Name') }}
+                                        <i class="ri-search-line search-icon"></i>
+                                    </div>
+                                    <small class="text-danger">{{ $errors->first('name') }}</small>
                                 </div>
                             </div>
                             <!--end col-->
-                            <div class="col-xxl-3 col-sm-4">
-                                <input type="text" class="form-control bg-light border-light" id="datepicker" data-provider="flatpickr" data-date-format="d M, Y" data-range-date="true" placeholder="Select date">
+                            <div class="w-100">
+                                <div class="m-0 form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                    {{ html()->label('Email', 'email') }}
+                                    <div class="search-box">
+                                        {{ html()->email('email')->class('searchFilter form-control search')->placeholder('Email') }}
+                                        <i class="ri-search-line search-icon"></i>
+                                    </div>
+                                    <small class="text-danger">{{ $errors->first('email') }}</small>
+                                </div>
+                            </div>
+
+                            <div class="w-100">
+                                <div class="m-0 form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
+                                    {{ html()->label('Mobile', 'mobile') }}
+                                    <div class="search-box">
+                                        {{ html()->number('mobile')->class('searchFilter form-control')->placeholder('Mobile') }}
+                                        <i class="ri-search-line search-icon"></i>
+                                    </div>
+                                    <small class="text-danger">{{ $errors->first('mobile') }}</small>
+                                </div>
+                            </div>
+
+                            <div class="w-50">
+                                <div class="m-0 form-group{{ $errors->has('status') ? ' has-error' : '' }}">
+                                    {{ html()->label('Status', 'status') }}
+                                        {{ html()->select('status', App\Models\Status::whereIn('id', [1,14,15])->pluck('name', 'id'))->class('form-control js-choice searchFilterChange') }}
+                                    <small class="text-danger">{{ $errors->first('status') }}</small>
+                                </div>
                             </div>
 
 
-                            
-
-                            <div class="col-sm-4">
-                                <button type="button" class="btn btn-primary w-100" onclick="filterData();">
-                                    <i class="ri-equalizer-fill me-1 align-bottom"></i> Filters
-                                </button>
-                            </div>
                             <!--end col-->
                         </div>
                         <!--end row-->
@@ -65,13 +93,10 @@
                 <div class="card-body">
                     <form>
                         <div class="row g-3">
-                            
-
-                            
 
                             <div class="col-sm-4">
                                 <button type="button" class="btn btn-primary w-100" onclick="filterData();">
-                                    <i class="ri-equalizer-fill me-1 align-bottom"></i> Filters
+                                    <i class="ri-equalizer-fill me-1 align-bottom"></i> Export
                                 </button>
                             </div>
                             <!--end col-->
@@ -121,7 +146,16 @@
 
 
     @push('scripts')
-
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".js-choice").each(function() {
+            new Choices($(this)[0], {
+                allowHTML: true,
+            }); 
+        });
+    });
+</script>
     <script type="text/javascript">
 
         $(document).ready(function(){
@@ -129,13 +163,17 @@
                 "processing": true,
                 "serverSide": true,
                 "ordering": false,
-                "searchning": false,
+                "searching": false,
                 "lengthMenu": [25, 50, 100, 250, 500],
                 'ajax': {
                     'url': '{{ route('admin.'.request()->segment(2).'.index') }}',
                     'data': function(d) {
                         d._token = '{{ csrf_token() }}';
                         d._method = 'PATCH';
+                        d.name = $('#name').val();
+                        d.email = $('#email').val();
+                        d.mobile = $('#mobile').val();
+                        d.status = $('#status').val();
                     }
 
                 },
@@ -176,7 +214,17 @@
             }]
 
         });
-        });
+
+     $('body').on('keyup', '.searchFilter', function(){
+        table2.draw('page');
+    });
+
+    $('body').on('change', '.searchFilterChange', function(){
+        table2.draw('page');
+    });
+
+
+});
 
     </script>
 

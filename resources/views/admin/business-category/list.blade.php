@@ -179,7 +179,7 @@
         "processing": true,
         "serverSide": true,
         "ordering": false,
-        // "searching": false,
+        "searching": false,
         "lengthChange": false,
         "lengthMenu": [25],
         'ajax': {

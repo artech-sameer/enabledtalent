@@ -40,10 +40,11 @@
                 </div>
 
                 <div class="form-check form-group">
-                    <input class="form-check-input" type="checkbox" value="" id="agree" />
+                    <input class="form-check-input" type="checkbox" name="terms_of_service" id="agree" />
                     <label class="form-check-label" for="agree">
                         I agree with the <a href="#">Terms Of Service.</a>
                     </label>
+                    <small class="text-danger">{{ $errors->first('terms_of_service') }}</small>
                 </div>
 
                 {{ html()->button('Submit &amp; Register')->type('button')->class('theme-btn')->attribute('onclick', 'store(this)') }}
@@ -56,7 +57,7 @@
                 <div class="login-footer">
                     <div class="login-divider"><span>Or</span></div>
                     <div class="social-login">
-                        <a href="#" class="btn-fb"><i class="fab fa-facebook"></i> Login With Facebook</a>
+                        {{-- <a href="#" class="btn-fb"><i class="fab fa-facebook"></i> Login With Facebook</a> --}}
                         <a href="{{ route('candidate.auth.google') }}" class="btn-gl"><i class="fab fa-google"></i> Login With Google</a>
                     </div>
                     <p>Already have an account? <a href="{{ route('candidate.login.form') }}">Sign In.</a></p>

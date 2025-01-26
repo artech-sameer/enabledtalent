@@ -47,5 +47,5 @@ Route::middleware('candidate.auth')->group(function() {
 });
 
 Route::fallback(function () {
-    return response()->view('admin.errors.404', [], 404);
+    return response()->view('web.errors.404', [], 404);
 });

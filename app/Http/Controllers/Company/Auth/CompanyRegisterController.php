@@ -13,8 +13,10 @@ class CompanyRegisterController extends Controller
 {
     protected $redirectTo = '/company/dashboard';
 
-    public function registrationForm()
-    {
+    public function registrationForm(){
+        if(auth('candidate')->user()){
+            return redirect()->route('candidate.dashboard.index');
+        }
         return view('company.auth.registration');
     }
 
@@ -33,6 +35,7 @@ class CompanyRegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:companies'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'terms_of_service' => ['required']
         ]);
 
         $company = new Company;
@@ -79,23 +82,28 @@ class CompanyRegisterController extends Controller
 
             $googleUser = Socialite::driver('google')->stateless()->user();
 
-            $company = Company::firstOrCreate(
-                ['email' => $googleUser->getEmail()],
-                [
+            $company = Company::where('email', $googleUser->getEmail())->first();
+
+            if (!$company) {
+                $company = Company::create([
                     'name' => $googleUser->getName(),
+                    'email' => $googleUser->getEmail(),
                     'google_id' => $googleUser->getId(),
                     'avatar' => $googleUser->getAvatar(),
-                    'password' => bcrypt('default_password'),
-                ]
-            );
+                    'password' => bcrypt(Str::random(16)),
+                ]);
+            }
 
             Auth::guard('company')->login($company);
 
             return redirect()->intended('company/dashboard');
         } catch (\Exception $e) {
-            return redirect('/company/login')->withErrors(['msg' => 'Unable to login.']);
+            \Log::error('Google OAuth Login Error: ' . $e->getMessage());
+
+            return redirect('/company/login')->withErrors(['msg' => 'Unable to login. Please try again.']);
         }
     }
+
 
     protected function guard()
     {

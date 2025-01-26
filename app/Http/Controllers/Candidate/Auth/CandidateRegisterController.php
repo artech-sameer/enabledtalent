@@ -13,8 +13,10 @@ class CandidateRegisterController extends Controller
 {
     protected $redirectTo = '/candidate/dashboard';
 
-    public function registrationForm()
-    {
+    public function registrationForm(){
+        if(auth('company')->user()){
+            return redirect()->route('company.dashboard.index');
+        }
         return view('candidate.auth.registration');
     }
 
@@ -33,6 +35,7 @@ class CandidateRegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:companies'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'terms_of_service' => ['required'],
         ]);
 
         $candidate = new Candidate;

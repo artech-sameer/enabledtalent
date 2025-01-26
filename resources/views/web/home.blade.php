@@ -15,7 +15,7 @@
                             <div class="hero-content text-center">
                                 <h6 class="hero-sub-title">We Have 250,000+ Live Jobs</h6>
                                 <h1 class="hero-title">
-                                    The #1 <span class="hero-span">Job Board for</span> Hiring or Find your next job
+                                    The # 1 <span class="hero-span">Job Board for</span> Hiring or Find your next job
                                 </h1>
                                 <p>
                                     There are many variations of passages orem psum available but the majority have

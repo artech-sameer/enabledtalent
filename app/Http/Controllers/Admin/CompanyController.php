@@ -19,9 +19,24 @@ class CompanyController extends Controller
         if ($request->wantsJson()) {
             $datas = Company::orderBy('name', 'asc');
             
-            $company_name = request()->input('Company_name');
-            if ($company_name) {
-                $datas->where('name', 'like', '%'.$company_name.'%');
+            $name = request()->input('name');
+            if ($name) {
+                $datas->where('name', 'like', '%'.$name.'%');
+            }
+
+            $email = request()->input('email');
+            if ($email) {
+                $datas->where('email', 'like', '%'.$email.'%');
+            }
+
+            $mobile = request()->input('mobile');
+            if ($mobile) {
+                $datas->where('mobile', 'like', '%'.$mobile.'%');
+            }
+
+            $status = $request->input('status');
+            if ($status) {
+                $datas->where('status_id', 'like', '%'.$status.'%');
             }
 
             $request->merge(['recordsTotal' => $datas->count(), 'length' => $request->length]);
