@@ -1,10 +1,27 @@
 /*
 Media File
 */
-span.logo-lg{
+form{
+    position: relative;
+}
+[data-layout="horizontal"] span.logo-lg{
     display: flex;
     align-items: center;
     height: 100%;
+}
+
+[data-layout=vertical] .logo-light {
+    display: flex !important;
+    min-height: 70px;
+    align-items: center;
+    width: 100%;
+}
+:is([data-layout=vertical],[data-layout=semibox])[data-sidebar-size=sm] .logo span.logo-sm {
+    display: inline-block;
+    width: 100%;
+}
+body .choices {
+    margin-bottom: 0;
 }
 span.logo-lg img {
     width: 100%;
@@ -13,7 +30,6 @@ span.logo-lg img {
 .loadmore-btn{
     cursor: pointer;
 }
-
 
 .dz-message span{
     font-size: 12px;

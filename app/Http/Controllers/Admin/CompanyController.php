@@ -128,6 +128,22 @@ class CompanyController extends Controller
             return redirect()->back()->with(['class'=>'error','message'=>'Whoops, looks like something went wrong ! Try again ...']);
     }
 
+
+    public function featured(Request $request){
+        $company = Company::where(['id' => $request->id, 'status_id' => 14])
+                ->whereHas('details', function ($query) {
+                    $query->where('status_id', 14);
+                })
+                ->with(['details'])
+                ->first();
+        if(isset($company)){
+            $company->featured = $request->featured;
+            $company->save();
+            return response()->json(['class'=>'bg-success','message'=>'Company status changed.']);
+        }
+        return response()->json(['class'=>'bg-danger','message'=>'Something went wrong.']);
+    }
+
     /**
      * Remove the specified resource from storage.
      *

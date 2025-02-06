@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Company\Auth;
 
-use App\Models\Company;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
+use App\Models\Company;
+use App\Models\CompanyDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
-
+use Illuminate\Support\Str;
 class CompanyRegisterController extends Controller
 {
     protected $redirectTo = '/company/dashboard';
@@ -35,7 +36,7 @@ class CompanyRegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:companies'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
-            'terms_of_service' => ['required']
+            'terms_of_service' => ['required'],
         ]);
 
         $company = new Company;
@@ -44,6 +45,11 @@ class CompanyRegisterController extends Controller
         $company->password = Hash::make($request->password);
         
         if ($company->save()) {
+            $company->details()->create([
+                'company_name' => $request->name,
+                'email' => $request->email,
+            ]);
+
             Auth::guard('company')->login($company); 
 
             return response()->json([
@@ -81,6 +87,7 @@ class CompanyRegisterController extends Controller
             ]);
 
             $googleUser = Socialite::driver('google')->stateless()->user();
+            //dd($googleUser);
 
             $company = Company::where('email', $googleUser->getEmail())->first();
 
@@ -91,6 +98,11 @@ class CompanyRegisterController extends Controller
                     'google_id' => $googleUser->getId(),
                     'avatar' => $googleUser->getAvatar(),
                     'password' => bcrypt(Str::random(16)),
+                ]);
+
+                $company->details()->create([
+                    'company_name' => $googleUser->getName(),
+                    'email' => $googleUser->getEmail(),
                 ]);
             }
 

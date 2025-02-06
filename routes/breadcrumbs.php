@@ -46,7 +46,7 @@ Breadcrumbs::for('companies', function (BreadcrumbTrail $trail) {
     $trail->push('Companies', route('admin.all-companies.index'));
 });
 
-Breadcrumbs::for('business-categories', function (BreadcrumbTrail $trail) {
+Breadcrumbs::for('industries', function (BreadcrumbTrail $trail) {
     $trail->parent('companies');
-    $trail->push('Business Categories', route('admin.business-categories.index'));
+    $trail->push('Industries', route('admin.industries.index'));
 });

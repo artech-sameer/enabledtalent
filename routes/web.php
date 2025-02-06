@@ -16,7 +16,7 @@ Route::controller(ComingSoonController::class)->name('web.')->group(function () 
     Route::get('state/list/{country_id}', 'StateList')->name('state.list');
     Route::get('district/list/{state_id}', 'districtList')->name('district.list');
     Route::get('city/list/{district_id}', 'cityList')->name('city.list');
-    Route::get('company/business/category', 'businessCategory')->name('company.business.category');
+    Route::get('company/industries', 'industries')->name('company.industries');
 });
 
 Route::middleware(['web', 'coming_soon'])->controller(PageController::class)->name('web.')->group(function () {

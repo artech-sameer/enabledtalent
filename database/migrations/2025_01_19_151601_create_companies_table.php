@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('mobile', 255)->nullable();
             $table->string('password', 255)->nullable();
             $table->rememberToken();
-            $table->integer('status_id')->default(14); // Assuming this is an active/inactive status reference
+            $table->integer('status_id')->default(14);
+            $table->boolean('featured')->default(0);
             $table->string('google_id')->nullable();
             $table->string('avatar')->nullable();
             $table->timestamp('email_verified_at')->nullable();

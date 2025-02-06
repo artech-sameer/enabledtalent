@@ -14,17 +14,24 @@ return new class extends Migration
         Schema::create('company_details', function (Blueprint $table) {
             $table->id();
             $table->foreignId('company_id')->constrained()->onDelete('cascade');
-            $table->foreignId('business_category_id')->nullable()->constrained()->onDelete('set null'); 
-            $table->string('employee_strength', 100);
+            $table->foreignId('industry_id')->nullable()->constrained()->onDelete('set null'); 
+            $table->string('company_name', 255)->nullable();
+            $table->string('email', 255)->nullable();
+            $table->string('mobile', 255)->nullable();
+            $table->string('company_size', 100)->nullable();
+            $table->string('registration_number', 255)->nullable();
             $table->text('bio')->nullable();
             $table->string('website_url')->nullable();
             $table->text('address')->nullable();
+            $table->integer('country_id')->nullable();
             $table->integer('state_id')->nullable();
             $table->integer('district_id')->nullable();
             $table->integer('city_id')->nullable();
             $table->string('locality', 255)->nullable();
             $table->integer('pincode')->nullable();
             $table->string('landmark', 255)->nullable();
+            $table->string('logo', 255)->nullable();
+            $table->integer('status_id')->default(15)->nullable();
             $table->timestamps();
         });
     }

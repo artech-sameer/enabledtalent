@@ -4,17 +4,19 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AppSettingController;
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\BreadController;
-use App\Http\Controllers\Admin\BusinessCategoryController;
 use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\CommonController;
 use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DistrictController;
+use App\Http\Controllers\Admin\IndustryController;
+use App\Http\Controllers\Admin\JobCategoryController;
 use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\SectionController;
 use App\Http\Controllers\Admin\StateController;
 use Illuminate\Support\Facades\Route;
 
@@ -227,17 +229,43 @@ Route::middleware('admin.auth')->group(function() {
         Route::post('all-companies', 'store')->name('all-companies.store')->middleware('can:add_all_companies');
         Route::put('all-companies/{id}', 'update')->name('all-companies.update')->middleware('can:edit_all_companies');
         Route::delete('all-companies/{id}/delete', 'destroy')->name('all-companies.destroy')->middleware('can:delete_all_companies');
+
+        Route::put('all-companies/featured/update', 'featured')->name('all-companies.featured')->middleware('can:edit_all_companies');
     });
 
-    //BusinessCategory
-    Route::controller(BusinessCategoryController::class)->group(function(){
-        Route::match(['get','patch'],'business-categories', 'index')->name('business-categories.index')->middleware('can:browse_business_categories');
-        Route::get('business-categories/create', 'create')->name('business-categories.create')->middleware('can:add_business_categories');
-        Route::get('business-categories/{id}', 'show')->name('business-categories.show')->middleware('can:read_business_categories');
-        Route::get('business-categories/{id}/edit', 'edit')->name('business-categories.edit')->middleware('can:edit_business_categories');
-        Route::post('business-categories', 'store')->name('business-categories.store')->middleware('can:add_business_categories');
-        Route::put('business-categories/{id}', 'update')->name('business-categories.update')->middleware('can:edit_business_categories');
-        Route::delete('business-categories/{id}/delete', 'destroy')->name('business-categories.destroy')->middleware('can:delete_business_categories');
+    //Industry
+    Route::controller(IndustryController::class)->group(function(){
+        Route::match(['get','patch'],'industries', 'index')->name('industries.index')->middleware('can:browse_industries');
+        Route::get('industries/create', 'create')->name('industries.create')->middleware('can:add_industries');
+        Route::get('industries/{id}', 'show')->name('industries.show')->middleware('can:read_industries');
+        Route::get('industries/{id}/edit', 'edit')->name('industries.edit')->middleware('can:edit_industries');
+        Route::post('industries', 'store')->name('industries.store')->middleware('can:add_industries');
+        Route::put('industries/{id}', 'update')->name('industries.update')->middleware('can:edit_industries');
+        Route::delete('industries/{id}/delete', 'destroy')->name('industries.destroy')->middleware('can:delete_industries');
+    });
+
+
+    //JobCategory
+    Route::controller(JobCategoryController::class)->group(function(){
+        Route::match(['get','patch'],'job-categories', 'index')->name('job-categories.index')->middleware('can:browse_job_categories');
+        Route::get('job-categories/create', 'create')->name('job-categories.create')->middleware('can:add_job_categories');
+        Route::get('job-categories/{id}', 'show')->name('job-categories.show')->middleware('can:read_job_categories');
+        Route::get('job-categories/{id}/edit', 'edit')->name('job-categories.edit')->middleware('can:edit_job_categories');
+        Route::post('job-categories', 'store')->name('job-categories.store')->middleware('can:add_job_categories');
+        Route::put('job-categories/{id}', 'update')->name('job-categories.update')->middleware('can:edit_job_categories');
+        Route::delete('job-categories/{id}/delete', 'destroy')->name('job-categories.destroy')->middleware('can:delete_job_categories');
+    });
+
+
+     //Section
+    Route::controller(SectionController::class)->group(function(){
+        Route::match(['get','patch'],'section', 'index')->name('section.index')->middleware('can:browse_section');
+        Route::get('section/create', 'create')->name('section.create')->middleware('can:add_section');
+        Route::get('section/{id}', 'show')->name('section.show')->middleware('can:read_section');
+        Route::get('section/{id}/edit', 'edit')->name('section.edit')->middleware('can:edit_section');
+        Route::post('section', 'store')->name('section.store')->middleware('can:add_section');
+        Route::put('section/{id}', 'update')->name('section.update')->middleware('can:edit_section');
+        Route::delete('section/{id}/delete', 'destroy')->name('section.destroy')->middleware('can:delete_section');
     });
 
 

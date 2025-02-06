@@ -120,12 +120,14 @@
                             <thead>
                                 <tr>
                                     <th>Si</th>
+                                    <th></th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Mobile</th>
-                                    <th>Business Category</th>
+                                    <th>Industry</th>
                                     <th>Location</th>
                                     <th>Status</th>
+                                    <th>Job Status</th>
                                     @can(['edit_all_companies','delete_all_companies', 'read_all_companies'])
                                     <th>Action</th>
                                     @endcan
@@ -179,12 +181,24 @@
                 },
                 "columns": [
                     { "data": "sn" },
+                    { "data": "featured",  
+                        render: function(data, type, row) {
+                            if(row['featured'] == 1){
+                                return '<button onclick="updateData(\'{{ route('admin.all-companies.featured') }}\',{featured:0, id:'+row['id']+'})" class="btn btn-sm btn-success"> <i class="ri-star-fill"></i> </button>';
+                            }
+
+                            if(row['featured'] == 0){
+                            return '<button onclick="updateData(\'{{ route('admin.all-companies.featured') }}\',{featured:1, id:'+row['id']+'})" class="btn btn-sm btn-soft-success"> <i class="ri-star-line"></i> </button>';
+                            }
+                        }
+                    },
                     { "data": "name" },
                     { "data": "email" },
                     { "data": "mobile" },
                     { "data": "category" },
                     { "data": "location" },
                     { "data": "status" },
+                    { "data": "job_status" },
                     {
                         "data": "action",
                         render: function(data, type, row) {

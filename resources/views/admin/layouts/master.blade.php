@@ -1,4 +1,4 @@
-<html lang="en" data-layout="horizontal" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="img-4" data-preloader="disable" data-theme="default" data-sidebar-visibility="show" data-layout-style="default" data-bs-theme="light" data-layout-width="fluid" data-layout-position="fixed" data-body-image="none">
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default" data-bs-theme="light" data-layout-width="fluid" data-layout-position="fixed" data-layout-style="default" data-body-image="none" data-sidebar-visibility="show">
 <head>
 
     <meta charset="utf-8" />
@@ -185,9 +185,6 @@
 
     <script src="{{asset('admin-assets/js/app.js')}}"></script>
     <script type="text/javascript">
-
-
-
 
         function deleteAjax(){  
             var url = $('#deleteURL').val();

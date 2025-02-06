@@ -245,13 +245,13 @@ Version         : 1.2
     });
 
 
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 50) {
-            $('.navbar').addClass("fixed-top");
-        } else {
-            $('.navbar').removeClass("fixed-top");
-        }
-    });
+    // $(window).scroll(function () {
+    //     if ($(this).scrollTop() > 50) {
+    //         $('.navbar').addClass("fixed-top");
+    //     } else {
+    //         $('.navbar').removeClass("fixed-top");
+    //     }
+    // });
 
 
     // countdown

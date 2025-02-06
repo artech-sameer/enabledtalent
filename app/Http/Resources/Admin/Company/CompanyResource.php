@@ -18,10 +18,12 @@ class CompanyResource extends JsonResource
             'name'=>$this->name??'N/A',
             'email'=>$this->email??'N/A',
             'mobile'=>$this->mobile??'N/A',
-            'location'=>$this->city??'N/A',
-            'category'=>$this->business_type??'N/A',
+            'location'=>$this->details->city?$this->details->city->name . ', '.$this->details->state->name :'N/A',
+            'category'=>$this->details->industry->name??'N/A',
             'status_id'=>$this->status_id,
             'status'=>status($this->status_id),
+            'job_status'=>status($this->details->status_id),
+            'featured'=> $this->featured,
         ];
     }
 }

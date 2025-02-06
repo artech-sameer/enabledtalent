@@ -23,11 +23,11 @@
     <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/nice-select.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/style-coming.css')}}">
 
 </head>
 
-<body>
+<body style="position: relative;">
 
     <!-- preloader -->
     <div class="preloader">
@@ -39,19 +39,19 @@
     </div>
     <!-- preloader end -->
 
-
+<img class="coming-soon-img" src="{{ asset('assets/img/coming-soon/02.jpg') }}">
     
     <!-- coming soon -->
-    <div class="coming-soon pt-120 pb-90" style="background: url('assets/img/coming-soon/02.jpg');">
+    <div class="coming-soon pt-120 pb-90" style="position:relative; z-index: 9999;">
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-12 col-md-9 col-lg-7">
                     <div class="coming-soon-content text-white text-center">
-                        {{-- <img src="{{ asset(get_app_setting('logo')) }}"> --}}
-                        <h1>Website is under construction</h1>
+                        
+                        <h1 class="text-white">Website is under construction</h1>
                         {{-- <p class="lead">Our website is under construction. We'll be here soon with our new awesome site,
                             subscribe to be notified.</p> --}}
-                        <div id="countdown" class="countdown-wrap my-4"><div class="row" ><div class="col countdown-single"><h2 class="mb-0">26</h2><h5 class="mb-0">Days</h5></div><div class="col countdown-single"><h2 class="mb-0">02</h2><h5 class="mb-0">Hours</h5></div><div class="col countdown-single"><h2 class="mb-0">13</h2><h5 class="mb-0">Minutes</h5></div><div class="col countdown-single"><h2 class="mb-0">35</h2><h5 class="mb-0">Seconds</h5></div></div></div>
+                        <div id="countdown" class="countdown-wrap my-4"></div>
                     </div>
                 </div>
             </div>

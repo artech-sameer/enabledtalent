@@ -67,11 +67,38 @@ class PermissionsTableSeeder extends Seeder
             ['id' => 49, 'menu_slug' => 'district', 'permission_key' => 'add_district', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
             ['id' => 50, 'menu_slug' => 'district', 'permission_key' => 'edit_district', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
             ['id' => 51, 'menu_slug' => 'district', 'permission_key' => 'delete_district', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
-             ['id' => 52, 'menu_slug' => 'city', 'permission_key' => 'browse_city', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 52, 'menu_slug' => 'city', 'permission_key' => 'browse_city', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
             ['id' => 53, 'menu_slug' => 'city', 'permission_key' => 'read_city', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
             ['id' => 54, 'menu_slug' => 'city', 'permission_key' => 'add_city', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
             ['id' => 55, 'menu_slug' => 'city', 'permission_key' => 'edit_city', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
             ['id' => 56, 'menu_slug' => 'city', 'permission_key' => 'delete_city', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+            ['id' => 57, 'menu_slug' => 'companies', 'permission_key' => 'browse_companies', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 58, 'menu_slug' => 'all_companies', 'permission_key' => 'browse_all_companies', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 59, 'menu_slug' => 'all_companies', 'permission_key' => 'read_all_companies', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 60, 'menu_slug' => 'all_companies', 'permission_key' => 'add_all_companies', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 61, 'menu_slug' => 'all_companies', 'permission_key' => 'edit_all_companies', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 62, 'menu_slug' => 'all_companies', 'permission_key' => 'delete_all_companies', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+            ['id' => 63, 'menu_slug' => 'industries', 'permission_key' => 'browse_industries', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 64, 'menu_slug' => 'industries', 'permission_key' => 'read_industries', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 65, 'menu_slug' => 'industries', 'permission_key' => 'add_industries', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 66, 'menu_slug' => 'industries', 'permission_key' => 'edit_industries', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 67, 'menu_slug' => 'industries', 'permission_key' => 'delete_industries', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+            ['id' => 68, 'menu_slug' => 'jobs', 'permission_key' => 'browse_jobs', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 69, 'menu_slug' => 'job_categories', 'permission_key' => 'browse_job_categories', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 70, 'menu_slug' => 'job_categories', 'permission_key' => 'read_job_categories', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 71, 'menu_slug' => 'job_categories', 'permission_key' => 'add_job_categories', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 72, 'menu_slug' => 'job_categories', 'permission_key' => 'edit_job_categories', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 73, 'menu_slug' => 'job_categories', 'permission_key' => 'delete_job_categories', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
+            ['id' => 74, 'menu_slug' => 'job_types', 'permission_key' => 'browse_job_types', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 75, 'menu_slug' => 'job_types', 'permission_key' => 'read_job_types', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 76, 'menu_slug' => 'job_types', 'permission_key' => 'add_job_types', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 77, 'menu_slug' => 'job_types', 'permission_key' => 'edit_job_types', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+            ['id' => 78, 'menu_slug' => 'job_types', 'permission_key' => 'delete_job_types', 'created_at' => Carbon::now(), 'updated_at' => Carbon::now()],
+
         ]);
     }
 }

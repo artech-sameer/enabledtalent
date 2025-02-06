@@ -19,7 +19,7 @@
                 <div class="row" style="display: flex; flex-wrap: wrap;">
                     <div class="col-lg-6 col-md-6" style="flex: 1 1 100%; max-width: 50%; box-sizing: border-box;">
                         <div class="job-item" style="text-align: center; margin: auto; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                            <img src="{{asset('Assets/img/job/job-2.jpg')}}" alt="" style="width: 100%; max-width: 400px; height: auto; display: block; margin: auto; border-radius: 10px;">
+                            <img src="{{asset('assets/img/job/job-2.jpg')}}" alt="" style="width: 100%; max-width: 400px; height: auto; display: block; margin: auto; border-radius: 10px;">
                             <div class="job-bottom" style="margin-top: 15px; display: flex; justify-content: center;">
                                 <a href="{{ route('company.login.form') }}" class="theme-btn" style="display: inline-block; padding: 10px 20px;">Want to Hire</a>
                             </div>
@@ -28,7 +28,7 @@
                     <!-- Second Column -->
                     <div class="col-lg-6 col-md-6" style="flex: 1 1 100%; max-width: 50%; box-sizing: border-box;">
                         <div class="job-item" style="text-align: center; margin: auto; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                            <img src="{{asset('Assets/img/job/job-2.jpg')}}" alt="" style="width: 100%; max-width: 400px; height: auto; display: block; margin: auto; border-radius: 10px;">
+                            <img src="{{asset('assets/img/job/job-2.jpg')}}" alt="" style="width: 100%; max-width: 400px; height: auto; display: block; margin: auto; border-radius: 10px;">
                             <div class="job-bottom text-center" style="margin-top: 15px; display: flex; justify-content: center;">
                                 <a href="{{ route('candidate.login.form') }}" class="theme-btn" style="display: inline-block; padding: 10px 20px;">Get Hired</a>
                             </div>

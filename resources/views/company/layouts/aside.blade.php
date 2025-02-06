@@ -9,8 +9,10 @@
                                     <button type="button" class="profile-img-btn"><i class="far fa-camera"></i></button>
                                     <input type="file" class="profile-img-file">
                                 </div>
-                                <h4>{{ auth('company')->user()->name }}</h4>
-                                <p>Software & Technology Company</p>
+                                <h4>{{ auth('company')->user()->details->company_name }}</h4>
+                                @if(auth('company')->user()->details->industry)
+                                    <p>{{ auth('company')->user()->details->industry->name }}</p>
+                                @endif
                             </div>
                             <ul class="user-profile-sidebar-list">
                                 <li>

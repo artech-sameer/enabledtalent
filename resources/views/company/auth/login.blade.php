@@ -41,9 +41,9 @@
 
 {{ html()->button('Login')->type('button')->class('theme-btn')->attribute('onclick = store(this)') }}
 
-<div class="text-muted text-center">
+{{-- <div class="text-muted text-center">
     Don't have an Account? <a href="{{ route('company.registration.form') }}">Sign up</a>
-</div>
+</div> --}}
 
 {{ html()->form()->close() }}
 

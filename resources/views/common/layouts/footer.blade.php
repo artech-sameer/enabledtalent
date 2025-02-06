@@ -1,6 +1,6 @@
 
 
-    <footer class="footer-area">
+    <footer class="footer-area bg-gradiant-circle">
         <div class="footer-widget">
             <div class="container">
                 <div class="row footer-widget-wrapper pt-100 pb-70">

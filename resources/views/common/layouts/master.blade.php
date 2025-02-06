@@ -7,9 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="keywords" content="">
+    <meta name="referrer" content="no-referrer" />
+    <title>
+        {{ get_app_setting('app_name') }} | 
+        @if(auth()->guard('company')->check())
+            {{ auth('company')->user()->details->company_name }}
+        @else
+            @if(request()->segment(3))
+                {{ Str::title(str_replace('-', ' ', request()->segment(3))) }}
+            @elseif(request()->segment(2))
+                {{ Str::title(str_replace('-', ' ', request()->segment(2))) }}
+            @elseif(request()->segment(1))
+                {{ Str::title(str_replace('-', ' ', request()->segment(1))) }}
+            @else
+                Home
+            @endif
+        @endif
+    </title>
 
-    <!-- title -->
-    <title>{{get_app_setting('app_name')}} | {{Str::title(str_replace('-', ' ', request()->segment(2)))}}</title>
+
 
     <!-- favicon -->
     <link rel="shortcut icon" href="{{asset(get_app_setting('favicon')??'admin-assets/images/favicon.png')}}">
@@ -23,7 +39,8 @@
     <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/nice-select.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}?version={{ time() }}">
+
     @stack('links')
 </head>
 
@@ -46,7 +63,7 @@
                 @show 
         </main>
     @include('common.layouts.footer')
-    
+   
     <!-- scroll-top -->
     <a href="#" id="scroll-top"><i class="far fa-angle-up"></i></a>
     <!-- scroll-top end -->
@@ -66,7 +83,7 @@
     <script src="{{asset('assets/js/masonry.pkgd.min.js')}}"></script>
     <script src="{{asset('assets/js/wow.min.js')}}"></script>
     <script src="{{asset('assets/js/nice-select.min.js')}}"></script>
-    <script src="{{asset('assets/js/main.js')}}"></script>
+    <script src="{{asset('assets/js/main.js')}}?version={{ time() }}"></script>
 
     @stack('scripts')
     <script src="{{asset('assets/js/custom.js')}}"></script>
@@ -86,5 +103,6 @@
       </script>
     @endif
     @include('common.layouts.script')
+     @include('common.layouts.alert-popup')
   </body>
 </html>

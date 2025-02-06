@@ -7,6 +7,7 @@ use App\Models\BusinessCategory;
 use App\Models\City;
 use App\Models\Country;
 use App\Models\District;
+use App\Models\Industry;
 use App\Models\State;
 use Illuminate\Http\Request;
 
@@ -141,7 +142,7 @@ class CommonController extends Controller{
     }
 
 
-    public function businessCategory(Request $request){
+    public function industries(Request $request){
         if (!$request->ajax()) {
             return response()->json(['message' => 'Invalid request'], 400);
         }
@@ -150,7 +151,8 @@ class CommonController extends Controller{
         $resultCount = 5;
         $term = $request->term ?? '';
 
-        $query = BusinessCategory::where('name', 'LIKE', '%' . $term . '%')
+        $query = Industry::where('name', 'LIKE', '%' . $term . '%')
+                ->where('status_id', 14)
                 ->orderBy('name', 'asc');
 
         $cities = $query->clone()
